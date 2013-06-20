@@ -1,10 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="no-js">
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="initial-scale=1">
 	<title>Front End Design Conference Shop</title>
-
+	<script>
+		document.documentElement.className = document.documentElement.className.replace( "no-js", "js" );
+	</script>
 	<link href="/css/layout.css" rel="stylesheet">
 </head>
 <body>
