@@ -1,0 +1,121 @@
+[
+	{
+		"name": "Mug",
+		"slug": "mug",
+		"price": "19.99",
+		"currency": "USD",
+		"description": "<p>An exquisite design for a conference mug. Great gifts for friends and family alike.</p>",
+		"photos": [
+			{
+				"filename": "product-mug.jpg",
+				"title": "Mug"
+			},
+			{
+				"filename": "product-mug-closeup.jpg",
+				"title": "Mug (Closeup)"
+			}
+		]
+	},
+	{
+		"name": "Hoodie",
+		"slug": "hoodie",
+		"price": "44.99",
+		"currency": "USD",
+		"description": "<p>All friends and family should be given a Front End Design Conference Hoodie</p>",
+		"photos": [
+			{
+				"filename": "product-hoodie.jpg",
+				"title": "Hoodie"
+			},
+			{
+				"filename": "product-hoodie-closeup.jpg",
+				"title": "Hoodie (Closeup)"
+			}
+		]
+	},
+	{
+		"name": "T-shirt",
+		"slug": "tshirt",
+		"price": "19.99",
+		"currency": "USD",
+		"description": "<p>You know you want a T-shirt from this conference!</p>",
+		"photos": [
+			{
+				"filename": "product-tshirt.jpg",
+				"title": "T-shirt"
+			},
+			{
+				"filename": "product-tshirt-closeup.jpg",
+				"title": "T-shirt (Closeup)"
+			}
+		]
+	},
+	{
+		"name": "Mug",
+		"slug": "mug1",
+		"price": "19.99",
+		"currency": "USD",
+		"description": "<p>An exquisite design for a conference mug. Great gifts for friends and family alike</p>",
+		"photos": [
+			{
+				"filename": "product-mug.jpg",
+				"title": "Mug"
+			},
+			{
+				"filename": "product-mug-closeup.jpg",
+				"title": "Mug (Closeup)"
+			}
+		]
+	},
+	{
+		"name": "Mug",
+		"slug": "mug2",
+		"price": "19.99",
+		"currency": "USD",
+		"description": "<p>An exquisite design for a conference mug. Great gifts for friends and family alike</p>",
+		"photos": [
+			{
+				"filename": "product-mug.jpg",
+				"title": "Mug"
+			},
+			{
+				"filename": "product-mug-closeup.jpg",
+				"title": "Mug (Closeup)"
+			}
+		]
+	},
+	{
+		"name": "Mug",
+		"slug": "mug3",
+		"price": "19.99",
+		"currency": "USD",
+		"description": "<p>An exquisite design for a conference mug. Great gifts for friends and family alike</p>",
+		"photos": [
+			{
+				"filename": "product-mug.jpg",
+				"title": "Mug"
+			},
+			{
+				"filename": "product-mug-closeup.jpg",
+				"title": "Mug (Closeup)"
+			}
+		]
+	},
+	{
+		"name": "Mug",
+		"slug": "mug4",
+		"price": "19.99",
+		"currency": "USD",
+		"description": "<p>An exquisite design for a conference mug. Great gifts for friends and family alike</p>",
+		"photos": [
+			{
+				"filename": "product-mug.jpg",
+				"title": "Mug"
+			},
+			{
+				"filename": "product-mug-closeup.jpg",
+				"title": "Mug (Closeup)"
+			}
+		]
+	}	
+]
