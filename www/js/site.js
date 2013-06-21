@@ -20,57 +20,36 @@ $doc.on( "click", ".visual-select li", function () {
 	select.selectedIndex = index;
 });
 
-$doc.on( "click", ".quick-view-overlay, .quick-view-close", function ( e ) {
-	$body.removeClass( "show-quick-view" );
-	e.preventDefault();
-});
-
-var _quickViewTemplate;
-var quickViewTemplate = function () {
-	if ( !_quickViewTemplate ) {
-		_quickViewTemplate = $.Deferred( function ( d ) {
-			$.get(
-				"/templates/quick-view.tmpl.html" 
-			).then( function ( template ) {
-			 	d.resolve( _.template( template ) );
-			}, d.reject );
+var _quickView;
+var quickView = function () {
+	if ( !_quickView ) {
+		_quickView = $.Deferred( function ( d ) {
+			$.getScript(
+				"/js/quick-view.js"
+			).then(
+				function () {
+					d.resolve( app.QuickView );
+				},
+				d.reject
+			);
 		}).promise();
 	}
 
-	return _quickViewTemplate;
+	return _quickView;
 };
 
-var friendlyJSON = function ( path ) {
-	return $.Deferred( function ( d ) {
-		$.getJSON( path ).then( function ( data ) {
-			d.resolve( data );
-		}, d.reject );
-	}).promise();
-};
-
-var overlaySetup = false;
-var $quickView;
+var quickCache;
 
 $doc.on( "click", ".product a", function ( e ) {
-
 	$body.addClass( "quick-view-loading" );
 	var href = $( e.currentTarget ).attr( "href" );
 
 	$.when(
-		quickViewTemplate(), 
-		friendlyJSON( href )
-	).then( function ( template, json ) {
-		if ( $quickView ) $quickView.remove();
-
-		$quickView = $( "<div>", {
-			"class": "quick-view product-details",
-			html: template( { product: json } )
-		}).appendTo( $body );
-
-		setTimeout( function () {
-			$body.removeClass( "quick-view-loading" );
-			$body.addClass( "show-quick-view" );
-		}, 100 );
+		quickView(), 
+		$.getJSON( href )
+	).then( function ( QuickView, json ) {
+		if ( quickCache ) quickCache.destroy();
+		quickCache = new QuickView( json[ 0 ] );
 	});
 	e.preventDefault();
 });

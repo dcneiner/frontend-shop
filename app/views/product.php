@@ -1,6 +1,7 @@
 <?php 
 
 	if ( is_xhr() || isset( $_GET[ 'callback' ] ) && trim( $_GET[ 'callback' ] ) !== "" ) {
+		sleep( 4 );
 		if ( is_xhr() ) {
 			header( "Content-type: text/json" );
 			echo json_encode( $product );
