@@ -1,0 +1,44 @@
+<header>
+	<h2><%- product.name %></h2>
+	<p class="quick-view-price">$<%- product.price %> <span class="currency"><%- product.currency %></span></p>
+	<a class="quick-view-close">X</a>
+</header>
+<form action="POST" class="quick-view-content">
+	<div class="quick-product-image">
+		<img src="/products/<%- product.photos[0].filename %>" width="800" height="533" class="product-thumbnail">
+	</div>
+	<div class="quick-product-details">
+		<div class="description">
+			<%= product.long_description || product.description %>
+		</div>
+
+		<% if ( product.colors ) { %>
+		<div class="settings-group price-colors">
+			<h3>Color Choices</h3>
+			<select class="color-choice" name="color">
+				<% _.each( product.colors, function ( color, index ) { %>
+				<option value="<%= color.value %>" <%= index === 0 ? "selected" : "" %>>
+					<%- color.name %>
+				</option>
+				<% }); %>
+			</select>
+			<ul class="color-choices visual-select">
+				<% _.each( product.colors, function ( color, index ) { %>
+				<li <%= index === 0 ? "class='current'" : "" %> title="<%- color.name %>" style="background-color: <%= color.value %>">
+				<% }); %>
+			</ul>
+		</div>
+		<% } %>
+		<% if ( product.sizes ) { %>
+		<div class="settings-group">
+			<h3>Size</h3>
+			<select name="size" class="sizes">
+				<% _.each( product.sizes, function ( size, index ) { %>
+				<option value="<%= size.value %>"><%- size.name %></option>
+				<% }); %>
+			</select>
+		</div>
+		<% } %>
+		<button class="add-to-cart" type="submit">Add to Cart</button>
+	</div>
+</form>

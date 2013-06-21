@@ -15,6 +15,11 @@
 				"filename": "product-mug-closeup.jpg",
 				"title": "Mug (Closeup)"
 			}
+		],
+		"colors": [
+			{ "name": "Blue", "value": "blue" },
+			{ "name": "Red", "value": "red" },
+			{ "name": "Orange", "value": "orange" }
 		]
 	},
 	{
@@ -32,6 +37,17 @@
 				"filename": "product-hoodie-closeup.jpg",
 				"title": "Hoodie (Closeup)"
 			}
+		],
+		"colors": [
+			{ "name": "Black", "value": "black" },
+			{ "name": "Red", "value": "red" }
+		],
+		"sizes": [
+			{ "name": "Adult Small", "value": "S" },
+			{ "name": "Adult Medium", "value": "M" },
+			{ "name": "Adult Large", "value": "L" },
+			{ "name": "Adult XL", "value": "XL" },
+			{ "name": "Adult XXL", "value": "XXL" }
 		]
 	},
 	{

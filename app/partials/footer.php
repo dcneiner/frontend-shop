@@ -24,7 +24,10 @@
 		</div>
 	</footer>
 
+	<div class="quick-view-overlay"><div class="quick-view-loader"></div></div>
+
 	<script src="/js/jquery.js"></script>
+	<script src="/js/underscore.js"></script>
 	<script src="/js/site.js"></script>
 </body>
 </html>
