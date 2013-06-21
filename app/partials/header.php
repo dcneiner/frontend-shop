@@ -9,7 +9,7 @@
 	</script>
 	<link href="/css/layout.css" rel="stylesheet">
 </head>
-<body>
+<body class="<?= $ios ? 'ios7' : '' ?>">
 	<header class="site-header">
 		<h1><a href="/">FrontEnd <em>Shop</em></a></h1>
 	</header>

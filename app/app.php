@@ -3,6 +3,8 @@
 		return isset( $_SERVER[ 'HTTP_X_REQUESTED_WITH' ] ) && $_SERVER[ 'HTTP_X_REQUESTED_WITH' ] === 'XMLHttpRequest';
 	}
 
+	$ios = false;
+
 	// Get original "Masked" path
 	$path = $_SERVER[ 'REQUEST_URI' ];
 	$path = explode( "?", $path );

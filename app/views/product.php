@@ -1,7 +1,6 @@
 <?php 
 
 	if ( is_xhr() || isset( $_GET[ 'callback' ] ) && trim( $_GET[ 'callback' ] ) !== "" ) {
-		sleep( 4 );
 		if ( is_xhr() ) {
 			header( "Content-type: text/json" );
 			echo json_encode( $product );
@@ -20,7 +19,7 @@
 
 	<article class="product-details">
 		<div class="primary-visuals">
-			<img src="/products/<?= $product[ 'photos' ][0][ 'filename' ] ?>" width="800" height="533" class="product-thumbnail">
+			<img src="/products/<?= $ios ? 'ios7' : 'default' ?>/<?= $product[ 'photos' ][0][ 'filename' ] ?>" width="800" height="533" class="product-thumbnail">
 		</div>
 		<form  method="POST" class="primary-details">
 			<h2><?= $product[ 'name' ] ?></h2>
@@ -29,17 +28,22 @@
 				<?= isset( $product[ 'long_description' ] ) ? $product[ 'long_description' ] : $product[ 'description' ] ?>
 			</div>
 
+			<?php if ( $product[ 'colors' ] ): ?>
 			<div class="settings-group price-colors">
 				<h3>Color Choices</h3>
 				<select class="color-choice" name="color">
-					<option value="blue" selected>Blue</option>
-					<option value="red">Red</option>
-					<option value="orange">Orange</option>
+					<?php foreach ($product['colors'] as $index => $color): ?>
+					<option value="<?= $color[ 'value' ] ?>" selected><?= $color[ 'name' ] ?></option>
+					<?php endforeach ?>
 				</select>
 				<ul class="color-choices visual-select">
-					<li class="current" data-value="blue" title="Blue" style="background-color: blue;"></li><li title="Red" data-value="red" style="background-color: red;"></li><li title="Orange" data-value="orange" style="background-color: orange;"></li>
+					<?php foreach ($product['colors'] as $index => $color): ?>
+					<option value="<?= $color[ 'value' ] ?>" selected><?= $color[ 'name' ] ?></option>
+					<li <?= $index === 0 ? 'class="current"' : '' ?> data-value="<?= $color[ 'value' ] ?>" title="<?= $color[ 'name' ] ?>" style="background-color: <?= $color[ 'value' ] ?>;"></li>
+					<?php endforeach ?>
 				</ul>
 			</div>
+			<?php endif; ?>
 			<div class="settings-group">
 				<h3>Size</h3>
 				<select name="size" class="sizes">
@@ -64,7 +68,7 @@
 				
 				<h2><?= $product[ 'name' ] ?></h2>
 				
-				<img src="/products/thumb-<?= $product[ 'photos' ][0][ 'filename' ] ?>" width="300" height="200" class="product-thumbnail">
+				<img src="/products/<?= $ios ? 'ios7' : 'default' ?>/thumb-<?= $product[ 'photos' ][0][ 'filename' ] ?>" width="300" height="200" class="product-thumbnail">
 				
 				<span class="price">
 					$<?= $product[ 'price' ] ?> <?= $product[ 'currency' ] ?>

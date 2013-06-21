@@ -39,7 +39,6 @@ var quickView = function () {
 };
 
 var quickCache;
-
 $doc.on( "click", ".product a", function ( e ) {
 	$body.addClass( "quick-view-loading" );
 	var href = $( e.currentTarget ).attr( "href" );
