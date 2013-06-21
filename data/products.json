@@ -56,7 +56,7 @@
 		"slug": "mug1",
 		"price": "19.99",
 		"currency": "USD",
-		"description": "<p>An exquisite design for a conference mug. Great gifts for friends and family alike</p>",
+		"description": "<p>An exquisite design for a conference mug.</p>",
 		"photos": [
 			{
 				"filename": "product-mug.jpg",
