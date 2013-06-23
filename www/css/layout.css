@@ -34,6 +34,14 @@ body.ios7 {
 
 .ios7 .site-header h1 {
 	border-bottom-color: #aaa;
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light",
+	             "Helvetica Neue", sans-serif;
+	font-weight: 300;
+}
+
+.ios7 .site-header h1:after {
+	content: " 7";
+	color: #aaa;
 }
 
 .site-header h1 a {
@@ -105,6 +113,12 @@ body.ios7 {
 	white-space: nowrap;
 	overflow: hidden;
 	text-overflow: ellipsis;
+}
+
+.ios7 .product h2 {
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light",
+	             "Helvetica Neue", sans-serif;
+	font-weight: 300;
 }
 
 .product p {

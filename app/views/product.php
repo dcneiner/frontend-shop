@@ -1,20 +1,17 @@
 <?php 
-
-	if ( is_xhr() || isset( $_GET[ 'callback' ] ) && trim( $_GET[ 'callback' ] ) !== "" ) {
-		if ( is_xhr() ) {
-			header( "Content-type: text/json" );
-			echo json_encode( $product );
-		} else {
-			$callback = preg_replace( '|[^a-z0-9-_$]|i', '', $_GET[ 'callback' ] );
-			header( "Content-type: text/javascript" );
-			echo $callback . "(" . json_encode( $product ) . ");";
-		}
-
-		exit;
+	function is_xhr() {
+		return isset( $_SERVER[ 'HTTP_X_REQUESTED_WITH' ] ) && $_SERVER[ 'HTTP_X_REQUESTED_WITH' ] === 'XMLHttpRequest';
 	}
 
+	# See if this is an AJAX request, if so – return JSON not HTML
+	if ( is_xhr() ) {
+		# Uncomment the following if you want to see the loader
+		# sleep( 2 );
+		header( "Content-type: text/javascript" );
+		echo json_encode( $product );
+		exit();
+	}
 ?>
-
 <?php include dirname( __FILE__ ) . "/../partials/header.php" ?>
 
 	<article class="product-details">
@@ -44,16 +41,16 @@
 				</ul>
 			</div>
 			<?php endif; ?>
+			<?php if ( $product[ 'sizes' ] ): ?>
 			<div class="settings-group">
 				<h3>Size</h3>
 				<select name="size" class="sizes">
-					<option value="s">Adult Small</option>
-					<option value="m">Adult Medium</option>
-					<option value="l">Adult Large</option>
-					<option value="xl">Adult XL</option>
-					<option value="xxl">Adult XXL</option>
+					<?php foreach ($product['sizes'] as $index => $size): ?>
+					<option value="<?= $size['value'] ?>"><?= $size['name'] ?></option>
+					<?php endforeach; ?>
 				</select>
 			</div>
+		<?php endif; ?>
 
 			<button class="add-to-cart" type="submit">Add to Cart</button>
 		</form>
