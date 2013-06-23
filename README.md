@@ -2,6 +2,10 @@
 
 This is an example website for my [jQuery Jumble](http://speakerdeck.com/dougneiner/jquery-jumble) presentation at the [Front End Design Conference](http://frontenddesignconference.com).
 
+## Running this repo
+
+To make the demo easy, I used PHP for this example. However, if you aren't used to running PHP sites, it might take you a bit to set up. The "root" of the site is the `www` folder.
+
 ## Task
 
 In our hypothetical website, our task was simple. There were existing product listings, with links to a product detail page. We were to enhance these links to show a popover with item details without taking them to that page. The links should continue to work if the user were to right click and choose "Open in new tab", etc.
