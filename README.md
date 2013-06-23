@@ -40,10 +40,10 @@ Part of my presentation included a joke where I convert the layout from somethin
 
 ## Links
 
-* [Contextual jQuery Video (jQuery UK)](#)
-* [Machina.js Video](#)
+* [Contextual jQuery Video (jQuery UK)](http://vimeo.com/40873228)
+* [Machina.js Video](http://vimeo.com/67473899)
 * [jQuery Build Tool](http://projects.jga.me/jquery-builder)
-* [Postman for Chrome]()
+* [Postman for Chrome](http://www.getpostman.com/)
 * [Detecting AJAX Events on the server](http://www.learningjquery.com/2010/03/detecting-ajax-events-on-the-server)
 
 ## License
